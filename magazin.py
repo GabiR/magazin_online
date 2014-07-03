@@ -64,8 +64,8 @@ def api_list():
 		price_list.append(price.name)
     return flask.jsonify({
         'id_list': product_id_list,
-		'name_list':name_list,
-		'price_list':price_list
+	'name_list':name_list,
+	'price_list':price_list
     })
 
 @app.route('/api/product/<int:product_id>')
