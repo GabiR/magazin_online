@@ -56,10 +56,16 @@ def delete(product_id):
 @app.route('/api/list')
 def api_list():
     product_id_list = []
+	name_list = []
+	price_list = []
     for product in Product.query.all():
         product_id_list.append(product.id)
+		name_list.append(product.name)
+		price_list.append(price.name)
     return flask.jsonify({
         'id_list': product_id_list,
+		'name_list':name_list,
+		'price_list':price_list
     })
 
 @app.route('/api/product/<int:product_id>')
@@ -72,6 +78,7 @@ def api_product(product_id):
         'price': price,
         'id': product_id,
     })
+    
 @app.route('/api/product/create', methods = ['POST'])
 def api_product_create():
     js = flask.request.get_json()
