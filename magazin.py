@@ -60,8 +60,8 @@ def api_list():
     price_list = []
     for product in Product.query.all():
         product_id_list.append(product.id)
-		name_list.append(product.name)
-		price_list.append(price.name)
+	name_list.append(product.name)
+	price_list.append(product.price)
     return flask.jsonify({
         'id_list': product_id_list,
 	'name_list':name_list,
